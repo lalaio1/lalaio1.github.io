@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkByte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkblue: '#0a192f',
+                        neonblue: '#00b4d8',
+                        darknavy: '#172a45',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap');
+        body {
+            font-family: 'Ubuntu Mono', monospace;
+            background-color: #0a192f;
+            color: #ccd6f6;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1e2a47;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.2);
+            border-color: #00b4d8;
+        }
+        .glow-text {
+            text-shadow: 0 0 8px rgba(0, 180, 216, 0.7);
+        }
+        .qr-code {
+            filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.5));
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #00b4d8;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-darkblue">
+    <!-- Header -->
+    <header class="bg-darknavy/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="code" class="text-neonblue w-8 h-8"></i>
+                <h1 class="text-2xl font-bold text-neonblue glow-text">DarkByte</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="nav-link text-gray-300 hover:text-neonblue">Serviços</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-neonblue">Sobre</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-neonblue">Contato</a>
+            </nav>
+            <button class="md:hidden text-gray-300 hover:text-neonblue">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neonblue glow-text">Serviços Profissionais de Hacking</h2>
+                <p class="text-lg mb-8 text-gray-300 leading-relaxed">
+                    Garantimos 100% de eficácia em nossos serviços após análise detalhada.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-neonblue hover:bg-neonblue/90 text-darkblue font-bold py-3 px-6 rounded transition duration-300 flex items-center">
+                        <i data-feather="send" class="mr-2"></i> Contato
+                    </a>
+                    <a href="#services" class="border border-neonblue text-neonblue hover:bg-neonblue/10 font-bold py-3 px-6 rounded transition duration-300 flex items-center">
+                        <i data-feather="list" class="mr-2"></i> Serviços
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-neonblue rounded-lg blur-lg opacity-20 animate-pulse"></div>
+                    <div class="relative bg-darknavy p-2 rounded-lg border border-gray-700">
+                        <img src="https://i.ibb.co/Lh01qSmX/photo-2026-01-16-20-07-00.jpg" alt="QR Code de Contato" class="w-64 h-64 qr-code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-darknavy">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-neonblue glow-text">Nossos Serviços</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Serviços especializados para diversas necessidades.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-darkblue p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-neonblue/10 p-3 rounded-full mr-4">
+                            <i data-feather="smartphone" class="text-neonblue w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neonblue">Hacking de Número</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Acesso completo a números telefônicos, incluindo mensagens, chamadas e registros.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-darkblue p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-neonblue/10 p-3 rounded-full mr-4">
+                            <i data-feather="shield" class="text-neonblue w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neonblue">Bypass de MFA/2FA</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Contornamos sistemas de autenticação em dois fatores para acesso completo a contas.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-darkblue p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-neonblue/10 p-3 rounded-full mr-4">
+                            <i data-feather="facebook" class="text-neonblue w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neonblue">Hacking de Redes Sociais</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Facebook, Instagram, Twitter(X), WhatsApp, Telegram e outras plataformas sociais.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-darkblue p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-neonblue/10 p-3 rounded-full mr-4">
+                            <i data-feather="globe" class="text-neonblue w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neonblue">Derrubar Sites</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Serviços de DDoS e derrubada de sites com garantia de eficácia.
+                    </p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-darkblue p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-neonblue/10 p-3 rounded-full mr-4">
+                            <i data-feather="hard-drive" class="text-neonblue w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neonblue">Acesso Remoto a Dispositivos</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Android, iOS, Windows, Linux e macOS - controle completo do dispositivo alvo.
+                    </p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-darkblue p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-neonblue/10 p-3 rounded-full mr-4">
+                            <i data-feather="camera" class="text-neonblue w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neonblue">Acesso a Galerias</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Acesso remoto a fotos, vídeos e arquivos multimídia em qualquer dispositivo.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-400 italic">
+                    * Todos os serviços são precedidos de análise gratuita para garantir 100% de eficácia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-darkblue">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-neonblue glow-text">Sobre Nós</h2>
+                <div class="w-20 h-1 bg-neonblue mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-300">Nossa Expertise</h3>
+                    <p class="text-gray-400 mb-6">
+                        Somos especialistas em hacking com muitos anos de experiência em diversas áreas de hacking e programação. Nossa equipe é composta por hackers qualificados que dominam as mais avançadas técnicas
+                    </p>
+                    <p class="text-gray-400">
+                        Trabalhamos com total garantia, discrição e eficácia em nossos serviços. Cada projeto é analisado minuciosamente antes de ser executado.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-300">Nossa Garantia</h3>
+                    <p class="text-gray-400 mb-6">
+                        Oferecemos 100% de garantia em todos os nossos serviços após análise detalhada. Nossa taxa de sucesso é inigualável no mercado, graças ao nosso rigoroso processo de avaliação prévia.
+                    </p>
+                    <div class="bg-darknavy p-4 rounded-lg border-l-4 border-neonblue">
+                        <p class="text-gray-300 italic">
+                            "Realizamos qualquer operação que envolva internet, hacking ou programação. Se você precisa de algo específico, entre em contato para discutirmos a viabilidade."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-darknavy">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-neonblue glow-text">Contato</h2>
+                <p class="text-gray-400">
+                    Entre em contato para solicitar um orçamento gratuito ou obter mais informações sobre nossos serviços.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-300">Telegram</h3>
+                        <a href="https://t.me/lalaio1" class="text-neonblue hover:underline flex items-center justify-center md:justify-start">
+                            <i data-feather="send" class="mr-2"></i> @lalaio1
+                        </a>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-300">QR Code</h3>
+                        <p class="text-gray-400 mb-4">
+                            Escaneie o QR code ao lado para entrar em contato diretamente pelo Telegram.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-300">Processo</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-neonblue mr-2 mt-1"></i>
+                                <span>Contato inicial para detalhes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-neonblue mr-2 mt-1"></i>
+                                <span>Análise gratuita da viabilidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-neonblue mr-2 mt-1"></i>
+                                <span>Orçamento sem compromisso</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-neonblue rounded-lg blur-lg opacity-20 animate-pulse"></div>
+                        <div class="relative bg-darkblue p-4 rounded-lg border border-gray-700">
+                            <img src="https://i.ibb.co/Lh01qSmX/photo-2026-01-16-20-07-00.jpg" alt="QR Code de Contato" class="w-64 h-64 qr-code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkblue border-t border-gray-800 py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i data-feather="code" class="text-neonblue w-6 h-6"></i>
+                    <span class="text-lg font-bold text-neonblue">DarkByte</span>
+                </div>
+                
+                <div class="text-gray-400 text-sm text-center md:text-right">
+                    <p class="mt-1">Serviços hacking com garantia de qualidade.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button[aria-label="mobile menu"]');
+            const mobileMenu = document.querySelector('#mobile-menu');
+            
+            if(mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+</html>
